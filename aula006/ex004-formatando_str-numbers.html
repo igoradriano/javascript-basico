@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body{
+            background-color: aqua;
+            color: blue;
+            font:normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <script>
+        var nome = window.prompt("Qual é o seu nome: ")
+        document.write(`<h6>Seu nome tem ${nome.length} letras</h6>`)
+        document.writeln(`O seu nome maiúsculo é ${nome.toUpperCase()}`)
+        document.write(`<h1>O seu nome minúsculo é ${nome.toLowerCase()}</h1>`)
+        document.write(`<h2>O seu nome maiúsculo é ${nome.toLowerCase()}</h2>`)
+        document.write(`O seu nome maiúsculo é ${nome.toUpperCase()}</br>`)
+        document.writeln(`O seu nome <strong>maiúsculo</strong> é ${nome.toUpperCase()}</br>`)
+
+        //Editando Números:
+        var n1 = Number(10485.9888)
+        document.writeln(`O meu salário esse mês foi só ${n1.toFixed(2)}</br>`)// estipulando numero de casas decimais
+        document.write(`O meu salário esse mês foi só ${n1.toFixed(2).replace('.',',')}</br>`)//substituindo . por vírgula
+        document.write(`O meu salário esse mês foi só ${n1.toLocaleString('pt-BR',{style:"currency",currency:"BRL"})}`)//substituindo . por vírgula
+    </script>
+</body>
+</html>
