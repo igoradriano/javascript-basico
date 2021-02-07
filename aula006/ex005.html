@@ -15,11 +15,16 @@
     </style>
 </head>
 <body>
-    <h1>Iniciando Estudos com DOM</h1>
-    <h2>Abaixo o resultado de Código HTML</h2>
+    <h1 id='titulo1'>Iniciando Estudos com DOM</h1>
+    <h2 name="titulo2">Abaixo o resultado de Código HTML</h2>
+    <h3>Título 3</h3>
     <p>Aqui vai o Resultado</p>
-    <div>clique em mim</div>
+
+    <a id='link'href="https://i2.wp.com/top10mais.org/wp-content/uploads/2016/08/Zydrunas-Savickas-entre-os-homens-mais-fortes-do-mundo.jpg?w=576&ssl=1" target="blank" rel="nofollow">Clique Aqui</a>
+
+    <div id="msg">clique em mim</div>
     <p>Aprendendo a usar o <strong>DOM</strong> em <abbr title="Hypertext Markup Language" ><strong>JavaScript</strong></abbr></p>
+    <p class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt excepturi maiores iste nihil accusamus quia voluptas, perferendis necessitatibus voluptates quisquam possimus modi, neque ex consequatur delectus non blanditiis fugit quod.</p>
     <script>
         window.document.writeln("Abaixo o resultado de Código JavaScript <br>") //Pode usar a tag <br> para quebra de linha
         window.document.write("O charset é:",window.document.charset,"<br>")
@@ -28,8 +33,44 @@
         window.document.write(" Node Name é: ",window.document.nodeName, "<br>")
 
         // Selecionando Elementos
-        var p1 = window.document.getElementsByTagName('p')
-        window.document.write(p1.innerText)
+        // 1) SELECIONANDO PELA TAG NAME --> Neste caso, devemos passar a posição da tag no final do código.
+        var p1 = window.document.getElementsByTagName('p')[0]
+        var p2 = window.document.getElementsByTagName('p')[1]
+        //  O 'innerText' serve para passar o texto dentro da variável p1 sem formatação.
+        window.document.write("Está escrito assim na primeira tag p: " + p1.innerText,"<br>")
+        // O 'innerHTML' serve para passar o texto dentro da variável p1 COM FORMATAÇÃO
+        window.document.write("Está escrito assim na primeira tag p: " + p2.innerHTML,"<br>")
+        // Alterando o Estilo do HTML e não do que foi printado pelo Java:
+        p1.style.color='blue'
+                
+        // Recebendo o body na variavel corpo e depois alterando sua cor com JavaScript
+        var corpo = window.document.body
+        corpo.style.background = "black"
+
+        //-------------------------------------------------------------------------------------------
+        // 2) SELECIONANDO PELO ID
+        var d = window.document.getElementById('msg')
+        d.style.background='green'
+        d.innerText = "Estou Modificando O conteúdo dessa tag através de JavaScript"
+        //Note que posso fazer um único comando:
+        window.document.getElementById('titulo1').innerText='Olá!'
+
+        //-----------------------------------------------------------------------------------------
+        // 3) SELECIONANDO PELO NAME
+        var e = window.document.getElementsByName('titulo2')[0]
+        e.style.background='red'
+        e.innerText = "Estou Modificando O conteúdo dessa tag  - Abaixo o resultado de Código HTML"
+        
+        
+        // 4) SELECIONANDO PELO CLASS
+        var c = window.document.getElementsByClassName('msg')[0]
+        c.innerText = "Modifiquei novamente o texto lorem dessa vez com HTML"
+        c.style.color="Yellow"
+
+         // 5) SELECIONANDO POR SELETOR
+         var link = window.document.querySelector('a#link')
+         link.style.color = 'white'
+         link.style.background = 'purple'    
     </script>
 </body>
 </html>
