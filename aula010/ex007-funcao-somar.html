@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+            background-color: rgb(104, 104, 104);
+            color: white ;
+        }
+        div#res{
+            margin-top: 20px;
+        }
+        input#button{
+            height: 70px;
+            width: 150px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +      <!-- Recebendo valores com caixa de valor-->
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()" id="button">     <!--Criando botao e chamando funcao somar-->
+    <div id="res">Resultado</div>
+    <script>
+        function somar() {   //Criando função somar
+            var tn1 = window.document.getElementById('txtn1')   //Recebendo valor inputado através do id 
+            var tn2 = window.document.querySelector(('input#txtn2'))
+            var res = window.document.getElementById('res') 
+            var n1 = Number(tn1.value)    //Convertando o tipo de variável
+            var n2 = Number(tn2.value) 
+            var s = n1 + n2          //somando as variáveis number
+            res.innerHTML=`A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`  //Modificando conteudo HTML da tag div através do seu id que foi passado para a variável var res
+            
+        }
+    </script>
+</body>
+</html>
