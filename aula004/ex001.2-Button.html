@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com Botão</title>
+    <style>
+        body{font: 12pt Arial;}        
+        button {
+            font-size: 20pt;
+            padding: 30px;
+            font-family: sans-serif;
+            color:rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Interagindo com um botão</h1>
+    <button onclick="clicou()">Clica em mim!</button>
+    <script>
+        function clicou(){
+            window.alert("Você clicou no botão! ")
+            document.body.style.backgroundColor = "rgb(54, 54, 54"
+            document.body.style.color = "white"
+        }
+    </script>
+    
+</body>
+</html>
