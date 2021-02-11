@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números em JS</title>
+    <style>
+        button{
+            padding: 30px;
+            font: 12pt Arial;
+        }
+        h1{
+            font-family: sans-serif;
+        }
+        p{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média do aluno v1.0</h1>
+    <button id="intem" onclick="media()">Clique aqui para calcular</button>
+    <section id="res">
+        <p>O resultado vai aparecer aqui...</p>
+    </section>
+    <script>
+        function media(){
+            let n1 = Number(window.prompt(`Digite um número: `))
+            let txt = window.document.querySelector('section#res')
+            txt.innerHTML = `<p>O número a ser analisado aqui será o <strong>${n1}</strong</p>`
+            txt.innerHTML += `<p><hr></hr</p>`
+            txt.innerHTML +=`<p>O seu valor absoluto é ${Math.abs(n1)}`
+            txt.innerHTML +=`<p>A sua parte inteira é ${Math.trunc(n1)}`
+            txt.innerHTML +=`<p>O valor inteiro mais próximo é o ${Math.round(n1)}`
+            txt.innerHTML +=`<p>A sua raíz quadrada é ${Math.sqrt(n1).toFixed(2)}`
+            txt.innerHTML +=`<p>A sua raíz cúbica é ${Math.cbrt(n1).toFixed(2)}`
+            txt.innerHTML +=`<p>O valor de ${n1}<sup>2</sup> é ${n1**2}`
+            txt.innerHTML +=`<p>O valor de ${n1}<sup>3</sup> é ${n1**3}`
+            window.document.body.style.backgroundColor = " rgb(204, 253, 255)"
+
+
+        } 
+    </script>
+    
+</body>
+</html>
