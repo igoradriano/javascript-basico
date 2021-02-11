@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        button{
+            padding: 25px;
+            font: 14pt Arial;
+            border-width: 5px;
+        }
+        h1{
+            font-family: sans-serif;
+        }
+        p{font: 12pt Arial;}
+    </style>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <button id="item" onclick="calcular()">Iniciar a soma</button>
+    <section id='res'>
+        <p>O resultado vem aqui...</p>
+    </section>
+    <script>
+        function calcular(){
+            let n1 = Number(window.prompt('Digite um número:'))
+            let n2 = Number(window.prompt('Digite outro número:'))
+            let txt = window.document.querySelector('section#res')
+            txt.innerHTML = `<p> A soma entre <mark>${n1}</mark> e <mark>${n2}</mark> é igual a <strong>${n1+n2}</strong>!`
+        }
+    </script>
+</body>
+</html>

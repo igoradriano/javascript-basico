@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número com JS</title>
+    <style>
+        h1{
+            font-family: sans-serif;
+        }
+        button{
+            padding: 30px;
+            font-family: sans-serif;
+            font-size: 14pt ;
+        }
+    </style>
+</head>
+<body>
+    <h1> Trabalho com números</h1>
+    <button id="item" onclick="iniciar()">Clique para calcular</button>
+    <section id="texto"> 
+        <p>O resultado vem aqui...</p>
+    </section>
+    <script>
+        window.alert('Seja bem-vindo(a) ao meu site!')
+        function iniciar(){
+            num = window.prompt('Digite um número:')
+            let dobro = num*2
+            let met = num/2
+            let t = window.document.getElementById("texto")
+            t.innerHTML = `<p> O dobro de ${num} é ${dobro} e a metade é ${met}!`
+            t.style.fontFamily = "Arial"
+        }
+    </script>
+</body>
+</html>
