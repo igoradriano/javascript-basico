@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Conver de Medidas</title>
+    <style>
+        button{
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="converter()">Conversor de Medidas</button>
+    <section id='item'>
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <section  id="item2">
+        <p></p>
+    </section>
+    <script>
+        function converter(){
+            let distancia = Number(window.prompt('Digite uma distância em metros (m)'))
+            let txt = window.document.querySelector('section#item')
+            let txt2 = window.document.querySelector('section#item2')
+            txt.innerHTML = `<p><strong>A distância de ${distancia.toFixed(2).toString().replace('.',',')} metros, correponde a...<strong>`
+            txt.style.font = "20pt Arial"
+            txt2.innerHTML = `<p>${(distancia/1000).toFixed(2).toString().replace('.',',')} quilômetros (Km)`
+            txt2.innerHTML += `<p>${(distancia/100).toFixed(2).toString().replace('.',',')} hectômetros (Hm)`
+            txt2.innerHTML += `<p>${(distancia/10).toFixed(2).toString().replace('.',',')} decâmetros (Dam)`
+            txt2.innerHTML += `<p>${(distancia*10).toFixed(2).toString().replace('.',',')} decimetros (dm)`
+            txt2.innerHTML += `<p>${(distancia*100).toFixed(2).toString().replace('.',',')} centimetros (cm)`
+            txt2.innerHTML += `<p>${(distancia*1000).toFixed(2).toString().replace('.',',')} milimetros (mm)`
+      
+
+
+        }
+
+    </script>
     
 </body>
 </html>
