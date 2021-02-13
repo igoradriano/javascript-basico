@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Troco</title>
+    <style>
+        button{
+            padding: 30px;
+            font: 14pt Arial;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <button onclick="calcular()">Comprar Produto</button>
+    <section>
+        <p id='item'></p>
+    </section>
+    <script>
+        function calcular(){
+            let produto = window.prompt("Qual o produto você está comprando?")
+            let preco = Number(window.prompt(`Quanto custa ${produto} que você está comprando?`))
+            let pagamento = Number(window.prompt(`Quanto foi o valor que você deu para pagar ${produto}`))
+            let txt = window.document.getElementById('item')
+            txt.innerHTML = 'OBRIGADO POR COMPRAR CONOSCO!'
+            txt.style.color = 'white'
+            window.document.body.style.backgroundColor="gray"
+            txt.style.font = "20pt Arial"
+
+            window.alert(`Você comprou ${produto} que custou ${preco.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}. Deu ${pagamento.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} em dinheiro e vai receber R$${(pagamento-preco).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} de troco.\nVolte sempre!`)
+        }
+    </script>
+
+    
+</body>
+</html>

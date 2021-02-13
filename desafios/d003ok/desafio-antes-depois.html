@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e depois</title>
+    <style>
+        button{
+            padding: 30px;
+            font: 14pt Arial;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <button onclick="iniciar()">Antecessor e Sucessor</button>
+
+    <script>
+        function iniciar(){
+            let n= Number(window.prompt('Digite um número inteiro qualquer: '))
+            window.alert(`Antes de, ${n} temos o número ${n-1}. \nDepois de, ${n} temos o número ${n+1}`)
+            
+        }
+    </script>
+    
+</body>
+</html>
