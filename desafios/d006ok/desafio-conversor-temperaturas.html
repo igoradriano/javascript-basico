@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conver de Temperaturas</title>
+    <style>
+        button{
+            padding: 20px;
+            font-size: 14pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="converter()">Converter</button>
+    <section id='item'>
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <hr>
+    <section  id="item2">
+        <p></p>
+    </section>
+    <script>
+        function converter(){
+            let temperatura = Number(window.prompt('Digite uma distância em metros (m)'))
+            let txt = window.document.querySelector('section#item')
+            let txt2 = window.document.querySelector('section#item2')
+            txt.innerHTML = `<p><strong>A temperatura de ${temperatura.toFixed(2).toString().replace('.',',')}&degC, corresponde a...<strong>`
+            txt.style.font = "20pt Arial"
+            txt2.innerHTML = `<p>${(temperatura+273.15).toFixed(2).toString().replace('.',',')}&degK (Kelvin)`
+            txt2.innerHTML += `<p>${(temperatura*1.8 +32).toFixed(2).toString().replace('.',',')}&degF (Fahrenheit)`
+            txt2.innerHTML += `<p>${((9*temperatura/5)+491.67).toFixed(2).toString().replace('.',',')}&degR (Rankine)`
+        }
+    </script>
+    
+</body>
+</html>

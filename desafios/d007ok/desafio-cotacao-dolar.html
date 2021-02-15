@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+        button{
+            padding: 20px;
+            font-size: 14pt;
+        }
+        p{
+            font-size: 14pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &rarr; US$</h1>
+    <button onclick="converter()">Converter</button>
+    <section id='item'>
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <hr>
+    <section  id="item2">
+        <p></p>
+    </section>
+    <script>
+        let cotacao = window.prompt("Antes de mais nada. Quanto está a cotação do dollar agora? ")
+        let cotacao2 = window.prompt("E a do Euro? ")
+        function converter(){
+            let disponivel = Number(window.prompt('Quantos R$ você tem na carteira? '))
+            let txt = window.document.querySelector('section#item')
+            let txt2 = window.document.querySelector('section#item2')
+            txt.innerHTML = `<p><strong>Você tem ${disponivel.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} disponível, convertendo para...<strong>`
+            txt.style.font = "20pt Arial"
+            txt2.innerHTML = `<p>Dollar equivale a :${(disponivel/cotacao).toLocaleString('pt-BR',{style:'currency',currency:'USD'})}`
+            txt2.innerHTML += `<p>Euro equivale a: ${(disponivel/cotacao2).toLocaleString('pt-BR',{style:'currency',currency:'EUR'})}`
+        }
+    </script>
+    
+</body>
+</html>
