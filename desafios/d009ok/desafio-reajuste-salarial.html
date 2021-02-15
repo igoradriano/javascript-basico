@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste salário</title>
+    <style>
+        button{
+            padding: 20px;
+            font-size: 14pt;
+        }
+        p{
+            font-size: 14pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="descontar()">Reajuste Salário</button>
+    <section id='item'>
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+    <hr>
+    <section  id="item2">
+        <p></p>
+    </section>
+    <script>
+        function descontar(){
+            let nome = window.prompt("Qual é o nome do Funcionário? ")
+            let salario = Number(window.prompt(`Qual é o salário de ${nome}?`))
+            let reajuste = Number(window.prompt(`O salario de ${nome} vai serreajustado em qual porcentagem ?`))
+            let txt = window.document.querySelector('section#item')
+            let txt2 = window.document.querySelector('section#item2')
+            txt.innerHTML = `<p><strong>${nome} recebeu um aumento salarial!!!<strong>`
+            txt.style.font = "20pt Arial"
+
+            txt2.innerHTML = `<p>O salário atual era ${salario.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}.`
+            txt2.innerHTML += `<p>Com o aumento de ${reajuste}%, o salário vai aumentar ${(salario*reajuste/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})} no próximo mês.`
+            txt2.innerHTML += `<p>E a partir daí,${nome} vai passar a ganhar ${(salario*(1+reajuste/100)).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}.`
+        }
+    </script>
+    
+</body>
+</html>

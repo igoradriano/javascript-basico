@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórula de Bhaskara</title>
+    <style>
+        button{
+            padding: 20px;
+            font-size: 14pt;
+        }
+        p{
+            font-size: 14pt;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="calcular()">Calcular</button>
+    <section id='item'>
+        <p>Considerando uma equação no formato <em><b>a</b>x<sup>2</sup> + <b>b</b>x + <b>c</b> = 0</em>, aperte o botão acima para calcularo valor de <b>&Delta;</b>.</p>
+    </section>
+    <hr>
+    <section  id="item2">
+        <p></p>
+    </section>
+    <script>
+        function calcular(){
+            let a = Number(window.prompt(`Qual é o valor de a?`))
+            let b = Number(window.prompt(`Qual é o valor de b?`))
+            let c = Number(window.prompt(`Qual é o valor de c?`))
+    
+            let txt = window.document.querySelector('section#item')
+            let txt2 = window.document.querySelector('section#item2')
+            txt.innerHTML = `<p><strong>Resolvendo a equação de Bhaskara<strong>`
+            txt.style.font = "20pt Arial"
+
+            txt2.innerHTML = `<p>A equação atual é <b>${a}x<sup>2</sup> + ${b}x + ${c} = 0</b>.`
+            txt2.innerHTML += `<p>O calculo realizado será <b>&Delta; = ${b}<sup>2</sup> - 4 . ${a} . ${c}</b>`
+            delta = b**2 - 4*a*c
+            txt2.innerHTML += `<p> O valor calculado foi <mark><b>&Delta; = ${delta}.</b></mark>`
+        }
+    </script>
+    
+</body>
+</html>
