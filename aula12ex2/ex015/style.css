@@ -22,17 +22,10 @@ footer{
 
 div{
     text-align: center;
-    padding: 5px; 
-}
-div#ano{
+    padding: 5px;
     text-align: left;
 }
-div#sexo{
-    text-align: left;
-}
-div#botao{
-    text-align: left;
-}
+
 footer{
     padding: 8px;
     font-size: 12px;
