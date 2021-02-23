@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados com JS</title>
+    <style>
+        body{
+            font: 14pt Arial ;
+        }
+        button{
+            padding: 20pt;
+            font-size: 13pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Dados v2.0</h1>
+    <button onclick="escrever()">Clique para começar</button>
+    <div id="res">
+        <p>Aqui vai aparecer o resultado...</p>
+    </div>
+    <script>
+        function escrever(){
+            let nome = window.prompt("Qual é seu nome? ")
+            var res = window.document.getElementById("res")
+            res.innerHTML = `<p> Olá ${nome}! É um grande prazer te conhecer!🖖`
+
+            
+        }
+    </script>
+    
+</body>
+</html>

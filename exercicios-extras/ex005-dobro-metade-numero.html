@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        body{
+            font: 15pt Arial;
+        }
+        button{
+            padding: 20pt;
+            font-size: 14pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Números</h1>
+    <button onclick="calcular()">Clique para calcular</button>
+    <section id="res">
+        <p>O resultado vem aqui...</p>
+    </section>
+    <script>
+        window.alert("Seja bem vindo(a) ao meu site!")
+        function calcular(){
+            let res = window.document.querySelector("section#res")
+            let n = Number(window.prompt("Digite um número: "))
+            res.innerHTML = `<p> O dobro de ${n} é ${n*2} e a metade é ${n/2}`          
+        }
+    </script>
+</body>
+</html>
