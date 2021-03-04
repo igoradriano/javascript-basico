@@ -6,7 +6,7 @@ console.log(`Nosso vetor é o ${num}`)
 
 num[3] = 6666  //posi;áo específica
 console.log(`Nosso vetor é o ${num}`)
-num.push(333)  //posicao específica
+num.push(333)  //no final da lista
 console.log(`Nosso vetor é o ${num}`)
 console.log(`${num.length}`)
 console.log(num.sort())
