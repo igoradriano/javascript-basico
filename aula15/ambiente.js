@@ -19,7 +19,7 @@ for(let i in num){
     console.log(num[i])
 }
 
-let c = num.indexOf(77)
+let c = num.indexOf(2)
 console.log(c)
 
 
