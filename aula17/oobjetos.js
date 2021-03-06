@@ -10,3 +10,8 @@ engordar(p=0){
 
 amigo.engordar(10)
 console.log(`${amigo.nome} pesa ${amigo.peso}kg`)
+
+for(i=1;i<=12;i++){
+    amigo.engordar(5)
+    console.log(`${amigo.nome} pesa ${amigo.peso}kg`)
+}
