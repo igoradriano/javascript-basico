@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        button{
+            padding: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="verificar()">Verificar</button>
+    <section id="res">
+        <p>Clique no botão acima para analisar a mudança de preço.</p>
+    </section>
+    <script>
+        function verificar(){
+            let ant = window.prompt("Qual era o preço anterior do produto?")
+            let dep = window.prompt("Qual é o preço atual do produto?")
+            let res = window.document.getElementById("res")
+            res.innerHTML = `<p>O produto custava ${ant} e agora custa ${dep}.</p>`
+            if (ant <= dep) {
+                res.innerHTML += "<p>Hoje o produto está mais caro</p>"
+                res.innerHTML += `<p>O preço subiu ${(dep-ant).toLocaleString("pt-BR",{style:'currency',currency:'BRL'})} em relação ao preço anterior.</p>`
+                res.innerHTML += `<p>Uma variação de ${(((dep/ant)-1)*100).toFixed(2).replace('.',',')}% pra cima. &#x2B06</p>`
+            } else {
+                res.innerHTML += "<p>Hoje o produto está mais barato</p>"
+                res.innerHTML += `<p>O preço subiu ${(ant-dep).toLocaleString("pt-BR",{style:'currency',currency:'BRL'})} em relação ao preço anterior.</p>`
+                res.innerHTML += `<p>Uma variação de ${((1-(dep/ant))*100).toFixed(2).replace('.',',')}% pra baixo. &#x2B07</p>`
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
