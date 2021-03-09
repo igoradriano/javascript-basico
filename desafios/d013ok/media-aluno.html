@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+    <style>
+        button{
+            padding: 15pt;
+        }
+        mark#green{
+            color: green;
+            background-color: rgba(97, 238, 97, 0.575);
+        }
+        mark#yellow{
+            color: rgb(141, 139, 5);
+            background-color: rgba(252, 255, 96, 0.863);
+        }
+        mark#red{
+            color: rgba(185, 16, 16, 0.877);
+            background-color: rgba(252, 52, 52, 0.479);
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <button onclick="situacao()">Entrar com as notas</button>
+    <section id="res">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </section>
+    <script>
+        function situacao(){
+            let nome = window.prompt("Qual é o nome do aluno? ")
+            let n1 = window.prompt(`Primeira nota de ${nome}:`)
+            let n2 = window.prompt(`Segunda nota de ${nome}:`)
+            let res = window.document.getElementById("res")
+            let media = ((Number(n1)+Number(n2))/2).toFixed(2)
+
+            res.innerHTML=`<p style="font-size: 20pt">Analisando a situação de ${nome}</p>`
+            res.innerHTML +=`<p>Com as notas ${n1} e ${n2} a <strong>média é de ${media}</strong></p>`
+            if (media>6){
+                res.innerHTML +=`<p>Com a média acima de 6,0 o aluno está <strong><mark id="green">APROVADO</mark></strong></p>`
+            }else if (media >=3 & media <=6){
+                res.innerHTML +=`<p>Com a média entre 3,0 e 6,0, o aluno esté em <strong><mark id="yellow">RECUPERAÇÃO</mark></strong></p>`
+            }else{
+                res.innerHTML +=`<p>Com média abaixo de 3,0, o aluno está <strong><mark id="red">REPROVADO</mark></strong></p>`
+            }
+            
+            
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
