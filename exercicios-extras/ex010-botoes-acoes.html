@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Externo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+        body { font: 12pt Arial; }
+        h1, h2, h3 { font-family: 'Pacifico', cursive; font-weight: normal;}
+        button { font-size: 12pt; padding: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Java Script Externo</h1>
+    <button onclick="acao1()">Ação 1</button>
+    <button onclick="acao2()">Ação 2</button>
+    <button onclick="acao3()">Ação 3</button>
+    <button onclick="acao4()">Ação 4</button>
+    <button onclick="acao5()">Ação 5</button>
+    <button onclick="acao6()">Ação 6</button>
+    <div id="res">
+        <p>Aqui vou registrar as ações com os botões acima.</p>
+    </div>
+
+    <script>
+        let res = window.document.querySelector("div#res")
+        function acao1(){res.innerHTML += `<p>Clicou no primeiro botão.`}
+        function acao2(){res.innerHTML += `<p>Clicou no segundo botão.`}
+        function acao3(){res.innerHTML += `<p>Clicou no terceiro botão.`}
+        function acao4(){res.innerHTML += `<p>Clicou no quarto botão.`}
+        function acao5(){res.innerHTML += `<p>Clicou no quinto botão.`}
+        function acao6(){res.innerHTML += `<p>Clicou no quinto botão.`}
+    </script>
+    
+</body>
+</html>
